@@ -14,7 +14,7 @@
                 <ul>
                     <li><a href="../profile/index.html">Account</a></li>
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="../courses/course.html">Courses</a></li>
+                    <li><a href="../courses/setting.html">Courses</a></li>
                     <li><a href="#">Calendar</a></li>
                     <li><a href="#">Inbox</a></li>
                     <li><a href="#">History</a></li>
@@ -42,7 +42,7 @@
                     <li><a href="#">Outcomes</a></li>
                     <li><a href="#">Collaborations</a></li>
                     <li><a href="#">Syllabus</a></li>
-                    <li><a href="#">Settings</a></li>
+                    <li><a href="../courses/setting.html">Settings</a></li>
                 </ul>
             </td>
             <td valign="top">
@@ -62,7 +62,9 @@
                 <input value="100" type="number" max="100" min="50" step="5" id="points" /><br><br>
 
                 <label for="assignmentGroup">Assignment Group</label> <br>
-                <input type="text" name="assignmentGroup" id="assignmentGroup" value="ASSIGNMENTS"><br><br>
+                <select id="assignmentGroup">
+                    <option value="ASSIGNMENTS">ASSIGNMENTS</option>
+                </select><br><br>
 
                 <label for="display">Display Grade as</label> <br>
                 <select name="display" id="display">
