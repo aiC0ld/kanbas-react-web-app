@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td valign="top">
+                <ul>
+                    <li><a href="./profile/index.html">Account</a></li>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="./courses/course.html">Courses</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Studio</a></li>
+                    <li><a href="#">Commons</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <ul>
+                    <li><a href="./home.html">Home</a></li>
+                    <li><a href="#">Modules</a></li>
+                    <li><a href="#">Piazza</a></li>
+                    <li><a href="#">Zoom Meetings</a></li>
+                    <li><a href="./assignments/index.html">Assignments</a></li>
+                    <li><a href="#">Quizzes</a></li>
+                    <li><a href="./grades.html">Grades</a></li>
+                    <li><a href="#">People</a></li>
+                    <li><a href="#">Panopto Video</a></li>
+                    <li><a href="#">Discussions</a></li>
+                    <li><a href="#">Announcements</a></li>
+                    <li><a href="#">Pages</a></li>
+                    <li><a href="#">Files</a></li>
+                    <li><a href="#">Rubrics</a></li>
+                    <li><a href="#">Outcomes</a></li>
+                    <li><a href="#">Collaborations</a></li>
+                    <li><a href="#">Syllabus</a></li>
+                    <li><a href="#">Settings</a></li>
+                </ul>
+            </td>
+            <td valign="top">
+                <select>
+                    <option value="Gradebook">Gradebook</option>
+                </select>
+                <button>Import</button>
+                <select>
+                    <option>Export</option>
+                    <option>UnPublish</option>
+                </select>
+                <button>Configure</button>
+
+                <!-- <table width="100%">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Student Names<br />
+                                <input title="Type the name of the student to search for"
+                                    placeholder="Search Students" />
+                            </td><br>
+                            <td>
+                                Assignment Names
+                                <input title="Type the assignment name to search for"
+                                    placeholder="Search Assignments" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> -->
+
+                <table>
+                    <tr>
+                        <form>
+                            <label for="studentNames">
+                                <h2>Student Names</h2>
+                            </label>
+                            <input type="text" id="studentNames" name="studentNames" placeholder="Search Students"><br>
+                            <label for="assignmentNames">
+                                <h2>Assignment Names</h2>
+                            </label>
+                            <input type="text" id="assignmentNames" name="assignmentNames"
+                                placeholder="Search Assignments"><br>
+                            <br><button type="submit">Apply Filters</button>
+                        </form>
+                    </tr>
+                </table>
+
+                <table width="100%" border="1" style="text-align: center;">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>A1 SETUP Out of 100</th>
+                            <th>A2 HTML Out of 100</th>
+                            <th>A3 CSS Out of 100</th>
+                            <th>A4 BOOTSTRAP Out of 100</th>
+                            <th>A5 JAVASCRIPT Out of 100</th>
+                            <th>A6 REACT Out of 100</th>
+                            <th>A7 REDUX Out of 100</th>
+                            <th>A8 NODE Out of 100</th>
+                            <th>A9 MONGO Out of 100</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alice Wonderland</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                        </tr>
+                        <tr>
+                            <td>Bob Builder</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                        </tr>
+                        <tr>
+                            <td>Charlie Chaplin</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                            <td>79</td>
+                            <td>98</td>
+                            <td>85</td>
+                        </tr>
+                        <tr>
+                            <td>Yoda</td>
+                            <td>95</td>
+                            <td>98</td>
+                            <td>84</td>
+                            <td>79</td>
+                            <td>93</td>
+                            <td>89</td>
+                            <td>77</td>
+                            <td>96</td>
+                            <td>86</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
