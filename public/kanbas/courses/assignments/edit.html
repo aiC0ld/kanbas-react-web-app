@@ -22,45 +22,33 @@
                     <a href="#"><img src="../../../images/NULogo.png" alt="NULogo" class="wd-nulogo"></a>
                 </li>
                 <li><a href="../../account/accountNavigation/index.html"><i
-                            class="fa-regular fa-circle-user text-secondary"></i><br>Account</a></li>
-                <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><br>Dashboard</a></li>
+                            class="fa fa-circle-user text-secondary"></i><br>Account</a></li>
+                <li><a href="../../dashboard/index.html"><i class="fa fa-gauge-high"></i><br>Dashboard</a></li>
                 <li class="wd-active"><a href="../coursesNavigation/index.html"><i
-                            class="fa-solid fa-book"></i><br>Courses</a></li>
-                <li><a href="#"><i class="fa-regular fa-calendar-days"></i><br>Calendar</a></li>
-                <li><a href="#"><i class="fa-solid fa-inbox"></i><br>Inbox</a></li>
-                <li><a href="#"><i class="fa-regular fa-clock"></i><br>History</a></li>
-                <li><a href="#"><i class="fa-solid fa-display"></i><br>Studio</a></li>
-                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i><br>Commons</a></li>
-                <li><a href="#"><i class="fa-regular fa-circle-question"></i><br>Help</a></li>
+                            class="fa fa-book"></i><br>Courses</a></li>
+                <li><a href="#"><i class="fa fa-calendar-days"></i><br>Calendar</a></li>
+                <li><a href="#"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="#"><i class="fa fa-clock"></i><br>History</a></li>
+                <li><a href="#"><i class="fa fa-display"></i><br>Studio</a></li>
+                <li><a href="#"><i class="fa fa-right-from-bracket"></i><br>Commons</a></li>
+                <li><a href="#"><i class="fa fa-circle-question"></i><br>Help</a></li>
             </ul>
         </div>
         <div class="col-10">
-            <div>
-                <div class="row">
-                    <div class="col-auto">
-                        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#courseNavigation">
-                            <i class="fa-solid fa-bars ps-4 pt-4 fa-lg text-danger"></i>
-                        </button>
-                    </div>
-                    <div class="col ps-0 pt-1">
-                        <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
-                            <ol class="breadcrumb pt-3">
-                                <li class="breadcrumb-item">
-                                    <a href="#" class="text-danger text-decoration-none">CS5610.11744.202310</a>
-                                </li>
-                                <li class="breadcrumb-item active" class="text-danger text-decoration-none"
-                                    aria-current="page">
-                                    Assignments
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">
-                                    A1 - ENV +...
-                                </li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <hr>
+
+            <div class="row">
+                <div class="col-auto">
+                    <i class="fa fa-bars ps-4 pt-4 fa-lg text-danger"></i>
                 </div>
+                <div class="col">
+                    <ol class="breadcrumb pt-3">
+                        <li class="breadcrumb-item text-danger">CS5610.11744.202310</li>
+                        <li class="breadcrumb-item active" aria-current="page"> Assignments</li>
+                    </ol>
+                </div>
+                <hr>
             </div>
+
             <div class="wd-flex-grow-1">
                 <div class="row">
                     <div class="col-2 collapse show" id="courseNavigation">
@@ -89,11 +77,11 @@
                         <div class="d-flex justify-content-end">
                             <div class="me-2 text-success">
                                 <p>
-                                    <i class="fa-regular fa-circle-check me-1"></i>Published
+                                    <i class="fa fa-circle-check me-1"></i>Published
                                 </p>
                             </div>
                             <div class="me-0">
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                <i class="fa fa-ellipsis-vertical"></i>
                             </div>
                         </div>
                         <hr />
@@ -101,15 +89,15 @@
                             <div class="mb-2">
                                 <label for="name" class="col col-form-label">Assignments Name:</label>
                                 <div class="col">
-                                    <input type="text" class="form-control w-100" id="name" value="" />
+                                    <input type="text" class="form-control w-100" id="name" value="A1-ENV + HTML" />
                                 </div>
                             </div>
 
                             <div class="mb-3">
                                 <label for="textarea1" class="col col-form-label">Assignment Description:</label>
                                 <div class="col">
-                                    <textarea class="form-control" id="textarea1" rows="3">
-This is the assignment description.</textarea>
+                                    <textarea class="form-control" id="textarea1"
+                                        rows="3">This assignment describes...</textarea>
                                 </div>
                             </div>
 
@@ -136,6 +124,7 @@ This is the assignment description.</textarea>
                                         <select class="form-select">
                                             <option selected>Percentage</option>
                                         </select>
+                                        <br>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="r6" />
                                             <label class="form-check-label" for="r6">
@@ -157,12 +146,12 @@ This is the assignment description.</textarea>
                                                 <label class="form-check-label" for="checkbox">Text Entry</label>
                                             </div>
                                             <div class="ms-2 pt-1">
-                                                <input class="form-check-input" type="checkbox" id="checkbox" />
+                                                <input class="form-check-input" type="checkbox" id="checkbox" checked />
                                                 <label class="form-check-label" for="checkbox">
                                                     Website URL</label>
                                             </div>
                                             <div class="ms-2 pt-1">
-                                                <input class="form-check-input" type="checkbox" id="checkbox" />
+                                                <input class="form-check-input" type="checkbox" id="checkbox" checked />
                                                 <label class="form-check-label" for="checkbox">
                                                     Media Recordings</label>
                                             </div>

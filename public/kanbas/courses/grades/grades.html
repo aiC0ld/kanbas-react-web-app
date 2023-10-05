@@ -23,7 +23,7 @@
                 </li>
                 <li><a href="../../account/accountNavigation/index.html"><i
                             class="fa-regular fa-circle-user text-secondary"></i><br>Account</a></li>
-                <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><br>Dashboard</a></li>
+                <li><a href="../../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><br>Dashboard</a></li>
                 <li class="wd-active"><a href="../coursesNavigation/index.html"><i
                             class="fa-solid fa-book"></i><br>Courses</a></li>
                 <li><a href="#"><i class="fa-regular fa-calendar-days"></i><br>Calendar</a></li>
@@ -35,25 +35,17 @@
             </ul>
         </div>
         <div>
-            <div>
-                <div class="row">
-                    <div class="col-auto">
-                        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#courseNavigation">
-                            <i class="fa-solid fa-bars ps-4 pt-4 text-danger fa-lg "></i>
-                        </button>
-                    </div>
-                    <div class="col ps-0 pt-1">
-                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                            <ol class="breadcrumb pt-3">
-                                <li class="breadcrumb-item"><a href="#"
-                                        class="text-danger text-decoration-none">CS5610.11744.202310</a>
-                                </li>
-                                <li class="breadcrumb-item active" aria-current="page">Grades</li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <hr>
+            <div class="row">
+                <div class="col-auto">
+                    <i class="fa-solid fa-bars ps-4 pt-4 fa-lg text-danger"></i>
                 </div>
+                <div class="col">
+                    <ol class="breadcrumb pt-3">
+                        <li class="breadcrumb-item text-danger">CS5610.11744.202310</li>
+                        <li class="breadcrumb-item active" aria-current="page"> Grades</li>
+                    </ol>
+                </div>
+                <hr>
             </div>
 
             <div class="wd-flex-row-container">
@@ -82,30 +74,26 @@
                 <div class="mx-5 col-8">
                     <div class="float-end">
                         <button type="button" class="btn btn-light border border-secondary-subtle"><i
-                                class="fa-solid fa-file-import"></i>Import</button>
+                                class="fa fa-file-import"></i> Import</button>
                         <button type="button" class="btn btn-light border border-secondary-subtle"><i
-                                class="fa-solid fa-file-export"></i>Export</button>
+                                class="fa fa-file-export"></i> Export</button>
                         <button type="button" class="btn btn-light border border-secondary-subtle"><i
-                                class="fa-solid fa-gear"></i></button>
+                                class="fa fa-gear"></i></button>
                     </div>
                     <div class="container px-0 pt-5">
                         <div class="row ">
-                            <div class="col mb-3">
-                                <h6><strong>Student Name</strong></h6>
-                                <select class="form-select">
-                                    <option selected><i class="fa-solid fa-magnifying-glass"></i> Search Students
-                                    </option>
-                                </select>
+                            <div class="col">
+                                <p>Student Names</p>
+                                <input class="form-select" type="studentname" placeholder="Search Students" />
                             </div>
-                            <div class="col mb-3">
-                                <h6><strong>Assignments Name</strong></h6>
-                                <select class="form-select">
-                                    <option selected>Search Assignments</option>
-                                </select>
+                            <div class="col">
+                                <p>Assignments Names</p>
+                                <input class="form-select" type="studentname" placeholder="Search Assignments" />
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-light"><i class="fa-solid fa-filter"></i>Apply Filter</button>
+                    <br>
+                    <button type="button" class="btn btn-light"><i class="fa fa-filter"></i>Apply Filter</button>
                     <br />
                     <br />
                     <div class="col-12">
@@ -118,87 +106,51 @@
                                         <th>A2 HTML Out of 100</th>
                                         <th>A3 CSS Out of 100</th>
                                         <th>A4 BOOTSTRAP Out of 100</th>
-                                        <th>A5 JAVASCRIPT Out of 100</th>
-                                        <th>A6 REACT Out of 100</th>
-                                        <th>A7 REDUX Out of 100</th>
-                                        <th>A8 NODE Out of 100</th>
-                                        <th>A9 MONGO Out of 100</th>
                                     </tr>
                                 </thead>
                                 <tbody style="text-align: center;">
                                     <tr>
-                                        <td class="text-danger">Alice Wonderland</td>
-                                        <td>98</td>
-                                        <td>89</td>
+                                        <td class="text-danger">Lana Li</td>
+                                        <td>100</td>
+                                        <td>100</td>
                                         <td>
-                                            <div class="justify-content-center align-items-center">
-                                                <input type="text" id="text-fields-grades"
-                                                    class="form-control text-center border border-danger" value="89" />
+                                            <div class="align-items-center">
+                                                <input type="number"
+                                                    class="form-control text-center border border-danger" value="99" />
                                             </div>
                                         </td>
+                                        <td>100</td>
+                                    </tr>
 
-                                        <td>90</td>
-                                        <td class="table-primary">90</td>
-                                        <td>89</td>
-                                        <td>88</td>
-                                        <td>97</td>
+                                    <tr>
+                                        <td class="text-danger">Scott Wai</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td class="text-danger">Justin Tang</td>
                                         <td class="table-primary">100</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-danger">Bob Builder</td>
-                                        <td>98</td>
+                                        <td>100</td>
                                         <td>
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <input type="text" id="text-fields-grades"
-                                                    class="form-control text-center border border-danger " value="80" />
-                                                <i class="fa-solid fa-arrow-right-from-bracket ms-2"></i>
+                                            <div class="align-items-center">
+                                                <input type="number"
+                                                    class="form-control text-center border border-danger" value="99" />
                                             </div>
                                         </td>
-                                        <td>87</td>
-                                        <td>86</td>
-                                        <td>78</td>
-                                        <td>94</td>
-                                        <td>85</td>
-                                        <td>84</td>
-                                        <td>92</td>
-
+                                        <td>100</td>
                                     </tr>
-                                    <tr>
-                                        <td class="text-danger">Charlie Chaplin</td>
-                                        <td class="table-primary">99</td>
-                                        <td>89</td>
-                                        <td>97</td>
-                                        <td>88</td>
-                                        <td>96</td>
-                                        <td>93</td>
-                                        <td>95</td>
-                                        <td>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <input type="text" id="text-fields-grades"
-                                                    class="form-control text-center border border-danger" value="100" />
-                                            </div>
 
-                                        </td>
-                                        <td>93</td>
-
-                                    </tr>
                                     <tr>
-                                        <td class="text-danger">Han Solo</td>
-                                        <td>83</td>
-                                        <td>99</td>
-                                        <td>94</td>
-                                        <td>98</td>
-                                        <td>86</td>
-                                        <td>83</td>
+                                        <td class="text-danger">Mia Gu</td>
+                                        <td>100</td>
+                                        <td>100</td>
                                         <td>
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <input type="text" id="text-fields-grades"
-                                                    class="form-control text-center border border-danger" value="88" />
-                                                <i class="fa-solid fa-arrow-right-from-bracket ms-2"></i>
-                                            </div>
+                                            99
                                         </td>
-                                        <td>80</td>
-                                        <td class="table-primary">84</td>
+                                        <td>100</td>
                                     </tr>
                                 </tbody>
                             </table>

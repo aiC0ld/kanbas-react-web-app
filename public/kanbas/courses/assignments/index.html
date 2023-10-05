@@ -22,41 +22,32 @@
                     <a href="#"><img src="../../../images/NULogo.png" alt="NULogo" class="wd-nulogo"></a>
                 </li>
                 <li><a href="../../account/accountNavigation/index.html"><i
-                            class="fa-regular fa-circle-user text-secondary"></i><br>Account</a></li>
-                <li><a href="../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><br>Dashboard</a></li>
+                            class="fa fa-circle-user text-secondary"></i><br>Account</a></li>
+                <li><a href="../../dashboard/index.html"><i class="fa fa-gauge-high"></i><br>Dashboard</a></li>
                 <li class="wd-active"><a href="../coursesNavigation/index.html"><i
-                            class="fa-solid fa-book"></i><br>Courses</a></li>
-                <li><a href="#"><i class="fa-regular fa-calendar-days"></i><br>Calendar</a></li>
-                <li><a href="#"><i class="fa-solid fa-inbox"></i><br>Inbox</a></li>
-                <li><a href="#"><i class="fa-regular fa-clock"></i><br>History</a></li>
-                <li><a href="#"><i class="fa-solid fa-display"></i><br>Studio</a></li>
-                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i><br>Commons</a></li>
-                <li><a href="#"><i class="fa-regular fa-circle-question"></i><br>Help</a></li>
+                            class="fa fa-book"></i><br>Courses</a></li>
+                <li><a href="#"><i class="fa fa-calendar-days"></i><br>Calendar</a></li>
+                <li><a href="#"><i class="fa fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="#"><i class="fa fa-clock"></i><br>History</a></li>
+                <li><a href="#"><i class="fa fa-display"></i><br>Studio</a></li>
+                <li><a href="#"><i class="fa fa-right-from-bracket"></i><br>Commons</a></li>
+                <li><a href="#"><i class="fa fa-circle-question"></i><br>Help</a></li>
             </ul>
         </div>
         <div class="col-10">
-            <div>
-                <div class="row">
-                    <div class="col-auto">
-                        <button class="btn" type="button" data-bs-toggle="collapse" data-bs-target="#courseNavigation">
-                            <i class="fa-solid fa-bars ps-4 pt-4 fa-lg text-danger"></i>
-                    </div>
-                    <div class="col-3 ps-0 pt-1">
-                        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-                            <ol class="breadcrumb pt-3">
-                                <li class="breadcrumb-item"><a href="#"
-                                        class="text-danger text-decoration-none">CS5610.11744.202310</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Assignments</li>
-                            </ol>
-                        </nav>
-                    </div>
-                    <div class="col-6 mt-2 text-end ms-5">
-                        <button type="button" class="btn btn-light border border-secondary-subtle"><i
-                                class="fa-solid fa-glasses me-2"></i>Student View</button>
-                    </div>
-                    <hr>
+            <div class="row">
+                <div class="col-auto">
+                    <i class="fa-solid fa-bars ps-4 pt-4 fa-lg text-danger"></i>
                 </div>
+                <div class="col">
+                    <ol class="breadcrumb pt-3">
+                        <li class="breadcrumb-item text-danger">CS5610.11744.202310</li>
+                        <li class="breadcrumb-item active" aria-current="page"> Assignments</li>
+                    </ol>
+                </div>
+                <hr>
             </div>
+
             <div class="wd-flex-grow-1">
                 <div class="row">
                     <div class="col-2 collapse show" id="courseNavigation">
@@ -86,38 +77,40 @@
                     <div class="col-8 mx-5">
                         <div class="container-fluid">
                             <div class="row">
-                                <div class="col-4 w-25">
+                                <div class="col-4 w-30">
                                     <input id="text-fields-search-Assignment" class="form-control"
                                         placeholder="Search to Assignments" />
                                 </div>
                                 <div class="col">
                                     <button type="button"
                                         class="btn btn-light float-end border border-secondary-subtle"><i
-                                            class="fa-solid fa-ellipsis-vertical"></i></button>
+                                            class="fa fa-ellipsis-vertical"></i></button>
                                     <button type="button" class="btn btn-danger me-1 float-end"><i
-                                            class="fa-solid fa-plus me-1"></i>Assignment</button>
+                                            class="fa fa-plus me-1"></i>Assignment</button>
                                     <button type="button"
                                         class="btn btn-light me-1 float-end border border-secondary-subtle"><i
-                                            class="fa-solid fa-plus me-1"></i>Group</button>
+                                            class="fa fa-plus me-1"></i>Group</button>
                                 </div>
 
                             </div>
                             <hr />
 
-                            <div class="pt-2">
+                            <div>
                                 <ul class="list-group border-start border-5 border-success ">
                                     <li class="list-group-item list-group-item-secondary" data-bs-toggle="collapse"
                                         data-bs-target="#assignment">
                                         <div class="d-flex justify-content-between align-items-center ">
                                             <span>
-                                                <i class="fa-solid fa-caret-down me-2 "></i>Assignments</span>
+                                                <i class="fas fa-ellipsis-v"></i>
+                                                <i class="fas fa-ellipsis-v me-2"></i>
+                                                <i class="fa fa-caret-down me-2 "></i>Assignments</span>
                                             <div class="d-flex justify-content-end">
                                                 <span
                                                     class="form-control form-control-sm w-100 rounded rounded-pill  text-center">
                                                     <p class="p-0 m-0 px-2">40% of Total</p>
                                                 </span>
-                                                <i class="fa-solid fa-plus float-end pt-2 me-4"></i>
-                                                <i class="fa-solid fa-ellipsis-vertical float-end pt-2"></i>
+                                                <i class="fa fa-plus float-end pt-2 me-4"></i>
+                                                <i class="fa fa-ellipsis-vertical float-end pt-2"></i>
                                             </div>
                                         </div>
 
@@ -126,7 +119,10 @@
                                         <ul id="assignment" class="list-group collapse show ">
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3  text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">A1
@@ -134,18 +130,19 @@
                                                         <br>
                                                         <small>Week 0 - SETUP - Week starting on Monday September
                                                             5th(9/5/2022) Module | <br> Due Sep 18, 2022 at 11:59pm |
-                                                            100 points</small>
+                                                            100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">A2
@@ -153,19 +150,20 @@
                                                         <br>
                                                         <small>Week 1 - HTML - Week starting on Monday September
                                                             12th(9/12/2022) Module | <br> Due Sep 25, 2022 at 11:59pm |
-                                                            100 points</small>
+                                                            100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">A3
@@ -173,39 +171,41 @@
                                                         <br>
                                                         <small>Week 2 - CSS - Week starting on Monday September
                                                             19th(9/19/2022) Module | <br> Due Oct 2, 2022 at 11:59pm |
-                                                            100 points</small>
+                                                            100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
-                                                        <a href="edit.html" class="text-decoration-none text-black">A4 -
+                                                        <a href="edit.html" class="text-decoration-none text-black">A4
                                                             BOOTSTRAP</a>
                                                         <br>
                                                         <small>Week 3 - Bootstrap - Week starting on Monday September
                                                             26th(9/26/2022) Module | <br> Due Oct 10, 2022 at 11:59pm |
-                                                            100 points</small>
+                                                            100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">A5
@@ -213,52 +213,55 @@
                                                         <br>
                                                         <small>Week 4 - JavaScript - Week starting on Monday October
                                                             3rd(10/3/2022) Module | <br> Due Oct 16, 2022 at 11:59pm |
-                                                            100 points</small>
+                                                            100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">A6
                                                             REACT</a>
                                                         <br>
-                                                        <small>Week 5 - REACT & Routing - Week starting on Monday
+                                                        <small>Week 5 - React & Routing - Week starting on Monday
                                                             October 10th(10/10/2022) Module | <br> Due Oct 23, 2022 at
-                                                            11:59pm | 100 points</small>
+                                                            11:59pm | 100 pts</small>
                                                     </div>
                                                     <div class="ms-auto">
-                                                        <i class="fa-solid fa-ellipsis-vertical float-end ps-4"></i>
-                                                        <i
-                                                            class="fa-solid fa-circle-check float-end text-success me-2"></i>
+                                                        <i class="fa fa-ellipsis-vertical float-end ps-4"></i>
+                                                        <i class="fa fa-circle-check float-end text-success me-2"></i>
                                                     </div>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                             </div>
-                            <div class="pt-4">
+                            <div>
                                 <ul class="list-group border-start border-5 border-success">
                                     <li class="list-group-item list-group-item-secondary" data-bs-toggle="collapse"
                                         data-bs-target="#quiz">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span><i class="fa-solid fa-caret-down me-2"></i>QUIZZES</span>
+                                            <span>
+                                                <i class="fas fa-ellipsis-v"></i>
+                                                <i class="fas fa-ellipsis-v me-2"></i>
+                                                <i class="fa fa-caret-down me-2"></i>QUIZZES</span>
 
                                             <div class="d-flex justify-content-end ">
                                                 <span
                                                     class="form-control form-control-sm w-100 rounded rounded-pill  text-center">
                                                     <p class="p-0 m-0 px-2">20% of Total</p>
                                                 </span>
-                                                <i class="fa-solid fa-plus float-end pt-2 me-4"></i>
-                                                <i class="fa-solid fa-ellipsis-vertical float-end pt-2"></i>
+                                                <i class="fa fa-plus float-end pt-2 me-4"></i>
+                                                <i class="fa fa-ellipsis-vertical float-end pt-2"></i>
                                             </div>
                                         </div>
 
@@ -268,81 +271,86 @@
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square me-2 text-success"></i>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green me-2 text-success"></i>
                                                     </div>
                                                     <div class="ms-3 text-secondary">
                                                         <a href="edit.html" class="text-decoration-none text-black">Q1
-                                                            -HTML</a>
+                                                            HTML</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
+                                                    <div>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
+                                                    </div>
                                                     <div class="ms-4 text-secondary">
-                                                        <a href="edit.html" class="text-decoration-none text-black">Q2 -
+                                                        <a href="edit.html" class="text-decoration-none text-black">Q2
                                                             CSS</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
+                                                    <div>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
+                                                    </div>
                                                     <div class="ms-4 text-secondary">
-                                                        <a href="edit.html" class="text-decoration-none text-black">Q3 -
+                                                        <a href="edit.html" class="text-decoration-none text-black">Q3
                                                             JavaScript</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
-                                                    <div class="ms-4 text-secondary">
-                                                        <a href="edit.html" class="text-decoration-none text-black">Q4 -
-                                                            NODE.JS</a>
-                                                        <br>
-                                                        Multiple Modules | Not available yet
+                                                    <div>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
                                                     </div>
-                                                </div>
-                                            </li>
-                                            <li class="list-group-item">
-                                                <div class="d-flex align-items-center my-1">
-
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
                                                     <div class="ms-4 text-secondary">
-                                                        <a href="edit.html" class="text-decoration-none text-black">Q5 -
-                                                            MONGODB</a>
+                                                        <a href="edit.html" class="text-decoration-none text-black">Q4
+                                                            Node.js</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                             </div>
-                            <div class="pt-4">
+                            <div>
                                 <ul class="list-group border-start border-5 border-success">
                                     <li class="list-group-item list-group-item-secondary" data-bs-toggle="collapse"
                                         data-bs-target="#exam">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span><i class="fa-solid fa-caret-down me-2"></i>EXAMS</span>
+                                            <span>
+                                                <i class="fas fa-ellipsis-v"></i>
+                                                <i class="fas fa-ellipsis-v me-2"></i>
+                                                <i class="fa fa-caret-down me-2"></i>EXAMS</span>
 
                                             <div class="d-flex justify-content-end ">
                                                 <span
                                                     class="form-control form-control-sm w-100 rounded rounded-pill  text-center">
                                                     <p class="p-0 m-0 px-2">20% of Total</p>
                                                 </span>
-                                                <i class="fa-solid fa-plus float-end pt-2 me-4"></i>
-                                                <i class="fa-solid fa-ellipsis-vertical float-end pt-2"></i>
+                                                <i class="fa fa-plus float-end pt-2 me-4"></i>
+                                                <i class="fa fa-ellipsis-vertical float-end pt-2"></i>
                                             </div>
                                         </div>
 
@@ -352,44 +360,54 @@
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
+                                                    <div>
+                                                        <i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
+                                                    </div>
                                                     <div class="ms-4 text-secondary">
                                                         <a href="edit.html"
                                                             class="text-decoration-none text-black">Midterm</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
+                                                    </div>
                                                     <div class="ms-4 text-secondary">
                                                         <a href="edit.html"
                                                             class="text-decoration-none text-black">Final</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
                                         </ul>
                                     </div>
                             </div>
-                            <div class="pt-4 pb-3">
+                            <div>
                                 <ul class="list-group border-start border-5 border-success">
                                     <li class="list-group-item list-group-item-secondary" data-bs-toggle="collapse"
                                         data-bs-target="#project">
                                         <div class="d-flex justify-content-between align-items-center">
-                                            <span><i class="fa-solid fa-caret-down me-2"></i>PROJECT</span>
+                                            <span>
+                                                <i class="fas fa-ellipsis-v"></i>
+                                                <i class="fas fa-ellipsis-v me-2"></i>
+                                                <i class="fa fa-caret-down me-2"></i>PROJECT</span>
 
                                             <div class="d-flex justify-content-end my-1">
                                                 <span
                                                     class="form-control form-control-sm w-100 rounded rounded-pill  text-center">
                                                     <p class="p-0 m-0 px-2">20% of Total</p>
                                                 </span>
-                                                <i class="fa-solid fa-plus float-end pt-2 me-4"></i>
-                                                <i class="fa-solid fa-ellipsis-vertical float-end pt-2"></i>
+                                                <i class="fa fa-plus float-end pt-2 me-4"></i>
+                                                <i class="fa fa-ellipsis-vertical float-end pt-2"></i>
                                             </div>
                                         </div>
 
@@ -399,12 +417,15 @@
                                             <li class="list-group-item">
                                                 <div class="d-flex align-items-center my-1">
 
-                                                    <div><i class="fa-regular fa-pen-to-square text-success"></i></div>
+                                                    <div><i class="fas fa-ellipsis-v"></i>
+                                                        <i class="fas fa-ellipsis-v me-2"></i>
+                                                        <i class="fa fa-book green text-success"></i>
+                                                    </div>
                                                     <div class="ms-4 text-secondary">
                                                         <a href="edit.html"
                                                             class="text-decoration-none text-black">Project</a>
                                                         <br>
-                                                        Multiple Modules | Not available yet
+                                                        <small>Multiple Modules | Not available yet</small>
                                                     </div>
                                                 </div>
                                             </li>
