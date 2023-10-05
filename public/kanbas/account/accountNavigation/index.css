@@ -1,0 +1,40 @@
+.wd-account-navigation {
+    background-color: white;
+    list-style: none;
+    padding: 0px;
+    width: 190px;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.wd-account-navigation li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.wd-account-navigation a {
+    color: red;
+    text-decoration: none;
+    display: inline-block;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.wd-account-navigation li.wd-active {
+    border-left: 2px solid black;
+    padding-left: 8px;
+}
+
+.wd-account-navigation li.wd-active a {
+    color: black;
+    font-weight: bold;
+}
+
+.wd-account-navigation li:hover a {
+    color: red;
+}

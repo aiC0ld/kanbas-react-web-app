@@ -1,0 +1,19 @@
+.wd-dashboard {
+    height: 350px;
+    width: 240px;
+    margin: 20px;
+}
+
+.wd-dashboard-container {
+    max-width: 1200px;
+}
+
+.wd-dashboard p.card-text-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.wd-dashboard i {
+    color: gray;
+}

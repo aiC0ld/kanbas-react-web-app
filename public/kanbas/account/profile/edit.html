@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile index</title>
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../accountNavigation/index.css">
+    <link rel="stylesheet" href="../../kanbasNavigation/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.2/css/all.css" />
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div class="wd-bg-color-black">
+            <ul class="wd-kanbas-navigation">
+                <li>
+                    <a href="#"><img src="../../../images/NULogo.png" alt="NULogo" class="wd-nulogo"></a>
+                </li>
+                <li class="wd-active"><a href="../accountNavigation/index.html"><i
+                            class="fa-regular fa-circle-user text-secondary" style="color:darkgrey"></i><br>Account</a>
+                </li>
+                <li><a href="../../dashboard/index.html"><i class="fa-solid fa-gauge-high"></i><br>Dashboard</a></li>
+                <li><a href="../../courses/coursesNavigation/index.html"><i class="fa-solid fa-book"></i><br>Courses</a>
+                </li>
+                <li><a href="#"><i class="fa-regular fa-calendar-days"></i><br>Calendar</a></li>
+                <li><a href="#"><i class="fa-solid fa-inbox"></i><br>Inbox</a></li>
+                <li><a href="#"><i class="fa-regular fa-clock"></i><br>History</a></li>
+                <li><a href="#"><i class="fa-solid fa-display"></i><br>Studio</a></li>
+                <li><a href="#"><i class="fa-solid fa-right-from-bracket"></i><br>Commons</a></li>
+                <li><a href="#"><i class="fa-regular fa-circle-question"></i><br>Help</a></li>
+            </ul>
+        </div>
+
+        <div class="flex-column wd-right-container-box">
+            <div class="row">
+                <div class="col-auto">
+                    <i class="fa-solid fa-bars ps-4 pt-4 fa-lg text-danger"></i>
+                </div>
+                <div class="col pt-2">
+                    <h4>Xinyue Han's Profile</h4>
+                </div>
+                <hr>
+            </div>
+            <div class="d-flex flex-row">
+                <div>
+                    <ul class="wd-account-navigation">
+                        <li><a href="#">Notifications</a></li>
+                        <li class="wd-active"><a href="./index.html">Profile</a></li>
+                        <li><a href="#">Files</a></li>
+                        <li><a href="#">Settings</a></li>
+                        <li><a href="#">ePortfolios</a></li>
+                        <li><a href="#">Shared Content</a></li>
+                        <li><a href="#">The Hub</a></li>
+                        <li><a href="#">Qwickly Course Tools</a></li>
+                        <li><a href="#">Global Announcements</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex-column">
+                    <div>
+                        <a href="./edit.html" class="btn btn-light btn-sm float-end border border-secondary-subtle"><i
+                                class="fa-solid fa-pencil fa-rotate-270 me-1"></i>Cancel Editing</a>
+                    </div>
+
+                    <div class="mb-3 form-group">
+
+                        <i class="fa-regular fa-circle-user fa-10x opacity-50 text-secondary"
+                            style="font-size: 6em;"></i><br /><br />
+
+                        <label for="profileName" class="form-label"><strong>Name:*</strong></label><br />
+                        <input id="profileName" type="text" class="form-control w-50" value="Xinyue Han"><br />
+                        <label for="pronouns" class="form-label"><strong>Pronouns:</strong></label><br />
+                        <select id="pronouns" class="form-select w-50">
+                            <option value="None">None</option>
+                            <option value="She">She/Her</option>
+                            <option value="He">He/Him</option>
+                            <option value="They">They/Them</option>
+                        </select> <br />
+
+                        <label for="title" class="form-label"><strong>Title:</strong></label><br />
+                        <input id="title" type="text" class="form-control" value=""> <br />
+
+                        <h4>Contact</h4>
+
+                        <p>No registered services, you can add some on the <a href="#" class="text-danger">settings</a>
+                            page.</p>
+
+                        <label for="biography">
+                            <h4>Biography</h4>
+                        </label>
+                        <textarea id="biography" rows="4"
+                            class="form-control">Second-year graduate student in Computer Science @ NEU.</textarea><br>
+                        <div>
+                            <h4>Links</h4>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <strong>Title</strong>
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <input id="title" class="form-control" value="Github">
+                                        </div>
+                                        <div class="col-2"><i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <strong>URL</strong>
+                                    <div class="row">
+                                        <div class="col-10"><input id="URL" class="form-control"
+                                                value="https://github.com/aiC0ld"></div>
+
+                                        <div class="col-2"><a href="#"><i
+                                                    class="fa-solid fa-xmark text-danger me-5"></i></a></div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <button class="btn btn-light border border-secondary-subtle">Add another link</button>
+                            <hr />
+                        </div>
+                        <a href="index.html" class="btn btn-danger float-end">Save Profile</a>
+                        <a href="index.html"
+                            class="btn btn-light float-end me-2 border border-secondary-subtle">Cancel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

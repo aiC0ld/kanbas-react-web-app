@@ -1,0 +1,31 @@
+.wd-kanbas-courseDetails {
+    margin: 5px;
+}
+
+.wd-kanbas-courseDetails ul,
+li {
+    border-radius: 0px;
+}
+
+.wd-kanbas-courseDetails ul.black-text li a {
+    color: black;
+}
+
+.wd-kanbas-courseDetails a {
+    color: #b52828;
+    text-decoration: none;
+}
+
+.wd-kanbas-courseDetails nav {
+    --bs-breadcrumb-divider: '>';
+}
+
+.wd-kanbas-courseDetails li.red {
+    color: #b52828;
+}
+
+.wd-kanbas-courseDetails i.red {
+    color: #b52828;
+    padding-left: 10px;
+    padding-right: 10px;
+}
