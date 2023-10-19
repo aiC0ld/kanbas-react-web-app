@@ -1,0 +1,36 @@
+.card-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.card-title-h5 {
+    color: rgb(14, 14, 183);
+}
+
+.card-body {
+    width: "160px";
+    overflow: "hidden";
+}
+
+.card-text {
+    font-size: small;
+    color: rgb(98, 96, 96);
+}
+
+.wd-dashboard-container {
+    max-width: 1200px;
+}
+
+.wd-dashboard {
+    height: 350px;
+    width: 240px;
+    margin: 20px;
+}
+
+.card-icon {
+    width: 10%;
+    height: 10%;
+    object-fit: cover;
+}

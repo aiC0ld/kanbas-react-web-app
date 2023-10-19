@@ -1,0 +1,16 @@
+.assignment-top {
+    margin-bottom: 20px;
+}
+
+.assignment-border {
+    border: 1px solid darkgrey;
+    padding: 1px 10px;
+}
+
+.assignment-icon-group {
+    margin: 5px;
+}
+
+.assignment-content h5 {
+    color: black;
+}
