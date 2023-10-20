@@ -23,17 +23,23 @@
   {
     "_id": "A201",
     "title": "Aerodynamics Quiz",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-10-19",
+    "points": "100"
   },
   {
     "_id": "A202",
     "title": "Flow Analysis",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-10-19",
+    "points": "100"
   },
   {
     "_id": "A203",
     "title": "Heating Analysis",
-    "course": "RS102"
+    "course": "RS102",
+    "dueDate": "2023-10-19",
+    "points": "100"
   },
   {
     "_id": "A301",

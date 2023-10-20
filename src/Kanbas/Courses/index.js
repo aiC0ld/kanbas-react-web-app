@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import db from "../../Kanbas/Database";
 import { Navigate, Route, Routes, useParams, useLocation, Link } from "react-router-dom";
 import CourseNavigation from "./CourseNavigation";
@@ -35,14 +35,12 @@ function Courses() {
                             </ol>
                         </nav>
                     </div>
-                    <div className="col-6 mt-2 text-end ms-5">
+                    <div className="mt-2">
                         <button type="button"
                             className="btn btn-light border border-secondary-subtle float-end">
-                            <FaGlasses className="me-2" />
-                            Student View
+                            <FaGlasses className="me-2" />Student View
                         </button>
                     </div>
-
                 </div>
                 <hr />
             </div>

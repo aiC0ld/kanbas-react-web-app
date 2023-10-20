@@ -7,7 +7,7 @@ function Home() {
     return (
         <div className="container-fluid">
             <div className="row">
-                <div className="col-12 col-sm-12 col-md-8">
+                <div className="col-10 col-sm-12 col-md-8">
                     <Modules />
                 </div>
 
@@ -86,8 +86,7 @@ function Home() {
                         <div style={{ display: 'flex', alignItems: 'center' }}>
                             <h5 style={{ marginRight: '1px' }}>Coming Up</h5>
                             <div className="ms-5 text-danger text-decoration-none">
-                                <FaCalendarDays className="me-2" />
-                                View Calendar
+                                <FaCalendarDays className="me-2" />View Calendar
                             </div>
                         </div>
                         <hr />

@@ -7,7 +7,7 @@ import TodoList from "./todos/TodoList";
 
 function Assignment3() {
     return (
-        <div className="container">
+        <div>
             <h1>Assignment 3</h1>
             <TodoList />
             <ConditionalOutput />

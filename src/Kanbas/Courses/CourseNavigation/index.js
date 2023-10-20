@@ -9,7 +9,7 @@ function CourseNavigation() {
     const { courseId } = useParams();
     const { pathname } = useLocation();
     return (
-        <div className="wd-course-navigation list-group d-none d-md-block" style={{ width: 150 }}>
+        <div className="wd-course-navigation list-group d-none d-md-block" style={{ width: 140 }}>
             {links.map((link, index) => (
                 <Link
                     key={index}

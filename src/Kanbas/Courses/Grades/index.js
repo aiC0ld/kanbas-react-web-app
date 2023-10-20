@@ -3,8 +3,6 @@ import { useParams } from "react-router-dom";
 import { FaCog, FaFilter, FaFileImport, FaFileExport } from 'react-icons/fa';
 import React, { useState } from "react";
 
-
-
 function Grades() {
     const { courseId } = useParams();
     const assignments = db.assignments.filter((assignment) => assignment.course === courseId);
@@ -27,12 +25,12 @@ function Grades() {
             <br />
 
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <label htmlFor="studentName"><h5>Student Names</h5></label>
                     <input
                         type="text" id="studentName" className="form-control" placeholder="Search Students" />
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-5">
                     <label htmlFor="assignmentsName"><h5>Assignment Names</h5></label>
                     <input type="text" id="assignmentsName" className="form-control" placeholder="Search Assignments" />
                 </div>

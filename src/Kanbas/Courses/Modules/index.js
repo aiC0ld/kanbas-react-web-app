@@ -5,9 +5,9 @@ import { FaEllipsisV, FaCheckCircle } from "react-icons/fa";
 function Modules() {
     return (
         <div className="row">
-            <div className="co1-lg-6 col-md col-sm-10">
+            <div className="co1-1g-6 col-md col-sm-10">
                 <div className="row justify-content-end">
-                    <div className="col-auto ms-5">
+                    <div className="col-auto">
                         <button type="button"
                             className="btn btn-light border-secondary-subtle">Collapse All
                         </button>
@@ -40,11 +40,11 @@ function Modules() {
                             <FaEllipsisV />
                         </button>
                     </div>
-                    <br />
-                    <hr />
                 </div>
 
-                <div className="row padding-top-20">
+                <hr />
+
+                <div className="row">
                     <ModuleList />
                 </div>
             </div>
