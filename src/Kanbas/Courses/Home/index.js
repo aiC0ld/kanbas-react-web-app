@@ -68,15 +68,13 @@ function Home() {
                         <h4>To Do</h4>
                         <hr />
                         <div className="row">
-                            <div className="col-1">
-
-                            </div>
                             <div className="col-10">
-                                <p>Grade A1 - ENV + HTML</p>
+                                <p className="text-danger">Grade A1 - ENV + HTML</p>
                                 <p>100 points * Sep 18 at 11:59pm</p>
                             </div>
-                            <div className="col-1">
-
+                            <div className="col-10">
+                                <p className="text-danger">Grade A1 - ENV + HTML</p>
+                                <p>100 points * Sep 18 at 11:59pm</p>
                             </div>
                         </div>
                     </div>
