@@ -10,7 +10,7 @@ function WorkingWithArrays() {
         due: "2021-09-09",
         completed: false,
     });
-    const API = "https://kanbas-node-server-app-xinyue.onrender.com/api/a5/todos" || "http://localhost:4000/a5/todos";
+    const API = "https://kanbas-node-server-app-xinyue.onrender.com/a5/todos" || "http://localhost:4000/a5/todos";
     const [todos, setTodos] = useState([]);
     const fetchTodos = async () => {
         const response = await axios.get(API);
