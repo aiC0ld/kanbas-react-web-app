@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { FaEllipsisV, FaSortDown, FaPlus, FaGripVertical, FaClipboardList, FaCheckCircle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, deleteAssignment, setAssignment } from "./assignmentsReducer";
+import { addAssignment, deleteAssignment, setAssignment, setAssignments } from "./assignmentsReducer";
 import DeleteDialog from "./DeleteDialog.js";
 import "./index.css";
+import { findAssignmentsForCourse } from "./client";
+import * as client from "./client";
 
 function Assignments() {
     const { courseId } = useParams();
@@ -14,13 +16,19 @@ function Assignments() {
     const courseAssignments = assignments.filter(
         (assignment) => assignment.course === courseId
     );
+
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        findAssignmentsForCourse(courseId)
+            .then((assignments) => {
+                dispatch(setAssignments(assignments));
+            })
+    }, [courseId]);
 
     const [toggle, setToggle] = useState(true);
 
-    const handleClick = () => {
-        setToggle(!toggle);
-    };
+    const handleClick = () => { setToggle(!toggle); };
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [selectedAssignment, setSelectedAssignment] = useState(null);
     const handleDelete = (assignment) => {
@@ -28,9 +36,16 @@ function Assignments() {
         setShowDeleteDialog(true);
     };
 
-    const handleConfirmDelete = () => {
-        dispatch(deleteAssignment(selectedAssignment._id));
-        setShowDeleteDialog(false);
+    // const handleConfirmDelete = () => {
+    //     dispatch(deleteAssignment(selectedAssignment._id));
+    //     setShowDeleteDialog(false);
+    // };
+
+    const handleConfirmDelete = (assignmentId) => {
+        client.deleteAssignment(assignmentId).then((status) => {
+            dispatch(deleteAssignment(assignmentId));
+            setShowDeleteDialog(false);
+        });
     };
 
     const handleCancelDelete = () => {
@@ -49,8 +64,10 @@ function Assignments() {
     };
 
     const handleAddAssignment = () => {
-        const newAssignment = { ...initialState, _id: new Date().getTime().toString() };
-        navigate(`/Kanbas/Courses/${courseId}/Assignments/${newAssignment._id}`);
+        client.createAssignment(courseId, initialState).then((assignment) => {
+            dispatch(addAssignment(assignment));
+            navigate(`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`);
+        });
     };
 
     return (
@@ -63,24 +80,24 @@ function Assignments() {
                             className="form-control"
                             placeholder="Search to Assignments" />
                     </div>
-                    <div className="col ">
+                    <div className="col">
                         <button type="button"
-                            className="btn float-end border-secondary-subtle">
+                            className="btn float-end border-secondary-subtle me-2">
                             <FaEllipsisV />
                         </button>
-                        <button onClick={handleAddAssignment} type="button" className="btn btn-danger me-1 float-end">
+                        <button onClick={handleAddAssignment} type="button" className="btn btn-danger me-2 float-end">
                             <FaPlus className="me-2 mb-1" />
                             Assignment
                         </button>
                         <button type="button"
-                            className="btn me-1 float-end border border-secondary-subtle">
+                            className="btn me-1 float-end border-secondary-subtle me-2">
                             <FaPlus className="me-2 mb-1" />Group
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className="list-group my-3">
+            <div className="list-group my-4">
                 <div
                     className="list-group-item list-group-item-secondary d-flex align-items-center justify-content-between fw-bold"
                     onClick={handleClick}>
@@ -96,7 +113,7 @@ function Assignments() {
                             placeholder="40% of total"
                             readOnly
                         />
-                        <FaPlus className="me-4 mx-2" />
+                        <FaPlus className="me-2 mx-2" />
                         <FaEllipsisV />
                     </div>
                 </div>
@@ -106,7 +123,7 @@ function Assignments() {
                             className="list-group-item d-flex align-items-center"
                             style={{ borderLeft: "5px solid green" }}
                             key={assignment._id}>
-                            <FaGripVertical className="me-3" />
+                            <FaGripVertical className="me-2" />
                             <FaClipboardList
                                 className="me-3"
                                 style={{ color: "green", fontSize: "20px" }} />
@@ -115,8 +132,7 @@ function Assignments() {
                                     <Link
                                         to={`/Kanbas/Courses/${courseId}/Assignments/${assignment._id}`}
                                         className="text-decoration-none text-black fw-bold"
-                                        onClick={() => dispatch(setAssignment(assignment))}
-                                    >
+                                        onClick={() => dispatch(setAssignment(assignment))} >
                                         <h6 style={{ margin: "0" }}>{assignment.title}</h6>
                                     </Link>
                                 </div>
@@ -125,60 +141,28 @@ function Assignments() {
                                         display: "flex",
                                         alignItems: "center",
                                         color: "grey",
-                                        fontSize: "14px",
-                                    }}
-                                >
-                                    <p style={{ margin: "0", color: "red" }}>
-                                        {assignment.description}
-                                    </p>
-                                    {assignment.available && (
-                                        <>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>|</p>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>
-                                                {assignment.available}
-                                            </p>
-                                        </>
-                                    )}
-                                    {assignment.until && (
-                                        <>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>until</p>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>
-                                                {assignment.until}
-                                            </p>
-                                        </>
-                                    )}
+                                        fontSize: "15px",
+                                    }}>
+                                    <p style={{ margin: "0" }}>{assignment.description}</p>
                                     {assignment.dueDate && (
-                                        <>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>|</p>
-                                            <p style={{ margin: "0", paddingLeft: "5px" }}>
-                                                Due {assignment.dueDate}
-                                            </p>
-                                        </>
+                                        <p style={{ margin: "0", paddingLeft: "5px" }}>| Due {assignment.dueDate}</p>
                                     )}
-                                    <p style={{ margin: "0", paddingLeft: "5px" }}>|</p>
                                     <p style={{ margin: "0", paddingLeft: "5px" }}>
-                                        {assignment.points} points
+                                        | {assignment.points} points
                                     </p>
                                 </div>
                             </div>
                             <button
-                                type="button"
-                                class="btn btn-danger me-2 "
-                                onClick={() => handleDelete(assignment)}>
-                                Delete
+                                class="btn btn-danger me-3"
+                                onClick={() => handleDelete(assignment)}>Delete
                             </button>
                             {showDeleteDialog && (
                                 <DeleteDialog
                                     assignment={selectedAssignment}
                                     handleConfirmDelete={handleConfirmDelete}
-                                    handleCancelDelete={handleCancelDelete}
-                                />
+                                    handleCancelDelete={handleCancelDelete} />
                             )}
-
-                            <FaCheckCircle
-                                className="text-success me-4"
-                                style={{ fontSize: "18px" }} />
-                            <FaEllipsisV />
+                            <FaCheckCircle className="text-success me-2" /><FaEllipsisV />
                         </div>
                     ))}
             </div>

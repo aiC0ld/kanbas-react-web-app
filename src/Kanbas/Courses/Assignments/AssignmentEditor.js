@@ -1,51 +1,73 @@
 import React from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { FaEllipsisVertical, FaRegCalendarDays } from "react-icons/fa6";
-import { FaCheckCircle } from "react-icons/fa";
+import { FaRegCalendarDays } from "react-icons/fa6";
+import { FaEllipsisV, FaCheckCircle } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import { addAssignment, updateAssignment, setAssignment } from "./assignmentsReducer";
+import { addAssignment, updateAssignment, setAssignment, setAssignments } from "./assignmentsReducer";
+import { useEffect } from "react";
+import * as client from "./client";
 
 function AssignmentEditor() {
     const { assignmentId, courseId } = useParams();
-    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
     const assignment = useSelector((state) => state.assignmentsReducer.assignment);
+    const assignments = useSelector((state) => state.assignmentsReducer.assignments);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const handleSave = () => {
-        const existingAssignment = assignments.find((assignment) => assignment._id === assignmentId);
-        if (existingAssignment) {
-            dispatch(updateAssignment(assignment));
+    const handleAddAssignment = () => {
+        client.createAssignment(courseId, assignment).then((assignment) => {
+            dispatch(addAssignment(assignment));
+        });
+    };
+
+    // const handleSave = () => {
+    //     const existingAssignment = assignments.find((assignment) => assignment._id === assignmentId);
+    //     if (existingAssignment) {
+    //         dispatch(updateAssignment(assignment));
+    //     } else {
+    //         dispatch(addAssignment({
+    //             ...assignment, course: courseId
+    //         }));
+    //     }
+    //     navigate(`/Kanbas/Courses/${courseId}/Assignments`);
+    // };
+
+    const handleSave = async () => {
+        if (!assignmentId) {
+            await handleAddAssignment();
         } else {
-            dispatch(addAssignment({
-                ...assignment, course: courseId
-            }));
+            await handleUpdateAssignment();
         }
         navigate(`/Kanbas/Courses/${courseId}/Assignments`);
     };
 
+    const handleUpdateAssignment = async () => {
+        const status = await client.updateAssignment(assignmentId, assignment);
+        dispatch(updateAssignment({ _id: assignmentId, ...assignment }));
+    };
+
+    const handleCancel = () => { navigate(`/Kanbas/Courses/${courseId}/Assignments`); };
+
     return (
         <div>
-            <div className="col-8 mx-5 mt-2">
-                <div className="d-flex justify-content-end">
+            <div className="col-10 mx-5">
+                <div className="d-flex align-items-center justify-content-end">
                     <div className="me-2 text-success d-flex align-items-center">
-                        <FaCheckCircle className="me-1" />Published
+                        <FaCheckCircle className="me-2" />Published
                     </div>
                     <div className="me-0 d-flex align-items-center">
-                        <FaEllipsisVertical />
+                        <FaEllipsisV />
                     </div>
                 </div>
                 <hr />
                 <form>
-                    <div className="mb-2">
-                        <label for="name" class="col col-form-label">
-                            Assignments Name:
-                        </label>
+                    <div className="mb-3">
+                        <label for="assignmentName" class="col col-form-label">Assignments Name:</label>
                         <div className="col">
-                            <input
-                                class="form-control w-100"
+                            <input class="form-control"
+                                type="text"
                                 value={assignment.title}
-                                id="name"
+                                id="assignmentName"
                                 onChange={(e) =>
                                     dispatch(setAssignment({ ...assignment, title: e.target.value }))
                                 } />
@@ -53,32 +75,29 @@ function AssignmentEditor() {
                     </div>
 
                     <div className="mb-3">
-                        <label for="textarea1" class="col col-form-label">
+                        <label for="assignDescription" class="col col-form-label">
                             Assignment Description:
                         </label>
                         <div className="col">
                             <textarea
                                 class="form-control"
-                                id="textarea1"
-                                rows="3"
+                                id="assignDescription"
+                                rows="5"
                                 value={assignment.description}
                                 onChange={(e) =>
-                                    dispatch(
-                                        setAssignment({ ...assignment, description: e.target.value, })
-                                    )
+                                    dispatch(setAssignment({ ...assignment, description: e.target.value, }))
                                 }
                             ></textarea>
                         </div>
                     </div>
 
-                    <div className="col-10 container-fluid">
+                    <div className="col-10">
                         <div className="mb-3 row">
                             <label for="points" class="col-4 text-end col-form-label">
                                 Points
                             </label>
                             <div className="col">
-                                <input
-                                    type="text"
+                                <input type="text"
                                     class="form-control"
                                     id="points"
                                     value={assignment.points}
@@ -93,17 +112,18 @@ function AssignmentEditor() {
                         <div>
                             <div className="mb-3 row">
                                 <label for="assign" class="col-4 text-end col-form-label">
-                                    Assign
+                                    Assignment Time
                                 </label>
                                 <div className="col border border-light-subtle p-2 mb-3 ms-2 mt-2">
                                     <div className="row ms-0">
-                                        <label for="due" class="form-label mt-2">Due
+                                        <label for="dueDate
+                                        " class="form-label mt-2">DueDate
                                         </label>
                                     </div>
                                     <div className="row ms-0">
                                         <div className="input-group mb-3">
                                             <input type="text"
-                                                className="form-control" id="due" value={assignment.dueDate}
+                                                className="form-control" id="dueDate" value={assignment.dueDate}
                                                 onChange={(e) =>
                                                     dispatch(
                                                         setAssignment({
@@ -113,21 +133,18 @@ function AssignmentEditor() {
                                                     )
                                                 }
                                             />
-                                            <span class="input-group-text" id="due">
+                                            <span class="input-group-text" id="dueDate">
                                                 <FaRegCalendarDays />
                                             </span>
                                         </div>
-                                    </div>
 
-                                    <div className="row ms-0">
-                                        <div className="col">
-                                            <label for="ava" class="form-label">
-                                                Available from
-                                            </label>
-                                            <div className="row">
+                                        <div className="row input-group mb-3">
+                                            <div className="col">
+                                                <label for="ava" class="form-label">
+                                                    Available from
+                                                </label>
                                                 <div className="input-group mb-3">
-                                                    <input
-                                                        type="text"
+                                                    <input type="text"
                                                         class="form-control"
                                                         aria-label="ava"
                                                         aria-describedby="basic-addon2"
@@ -145,32 +162,20 @@ function AssignmentEditor() {
                                                         <FaRegCalendarDays />
                                                     </span>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div className="col">
-                                            <label for="until" class="form-label">
-                                                Until
-                                            </label>
-                                            <div className="row">
-                                                <div className="input-group mb-3">
-                                                    <input
-                                                        type="text"
-                                                        class="form-control"
-                                                        aria-label="until"
-                                                        aria-describedby="basic-addon1"
-                                                        value={assignment.until}
-                                                        onChange={(e) =>
-                                                            dispatch(
-                                                                setAssignment({
-                                                                    ...assignment,
-                                                                    until: e.target.value,
-                                                                })
-                                                            )
-                                                        }
-                                                    />
-                                                    <span class="input-group-text" id="basic-addon1">
-                                                        <FaRegCalendarDays />
-                                                    </span>
+                                                <label for="until" class="form-label">
+                                                    Until
+                                                </label>
+                                                <div className="row">
+                                                    <div className="input-group mb-3">
+                                                        <input type="text" class="form-control"
+                                                            aria-label="until" aria-describedby="basic-addon1"
+                                                            value={assignment.until}
+                                                            onChange={(e) =>
+                                                                dispatch(setAssignment({ ...assignment, until: e.target.value, }))} />
+                                                        <span class="input-group-text" id="basic-addon1">
+                                                            <FaRegCalendarDays />
+                                                        </span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
