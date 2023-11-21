@@ -10,13 +10,29 @@ import Grades from "./Grades";
 import { FaBars } from 'react-icons/fa';
 import './index.css';
 import { FaGlasses } from "react-icons/fa";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Courses() {
     const { pathname } = useLocation();
     const pathParts = pathname.split("/");
     const lastPathPart = pathParts[pathParts.length - 1] || "Home";
     const { courseId } = useParams();
-    const course = db.courses.find((course) => course._id === courseId);
+    // const course = db.courses.find((course) => course._id === courseId);
+    const [course, setCourse] = useState({});
+    const API_BASE = process.env.REACT_APP_API_BASE || "http://localhost:4000/api";
+    const URL = `${API_BASE}/courses`;
+    const findCourseById = async (courseId) => {
+        const response = await axios.get(
+            `${URL}/${courseId}`
+        );
+        setCourse(response.data);
+    };
+
+    useEffect(() => {
+        findCourseById(courseId);
+    }, [courseId]);
+
 
     return (
         <div className="row align-items-center">

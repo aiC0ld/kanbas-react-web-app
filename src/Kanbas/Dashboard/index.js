@@ -1,41 +1,41 @@
-import db from "../Database";
+// import db from "../Database";
 import { Link } from "react-router-dom";
 import { RiBook2Line } from 'react-icons/ri';
 import "./index.css";
 import { React, useState } from "react";
 
-function Dashboard() {
+function Dashboard({ courses, course, setCourse, addCourse,
+    deleteCourse, updateCourse }) {
     // const courses = db.courses;
-    const [courses, setCourses] = useState(db.courses);
-    const [course, setCourse] = useState({
-        name: "New Course", number: "New Number",
-        startDate: "2023-09-10", endDate: "2023-12-15",
-    });
+    // const [courses, setCourses] = useState(db.courses);
+    // const [course, setCourse] = useState({
+    //     name: "New Course", number: "New Number",
+    //     startDate: "2023-09-10", endDate: "2023-12-15",
+    // });
 
-    const addNewCourse = () => {
-        setCourses([...courses,
-        {
-            ...course,
-            _id: new Date().getTime()
-        }]);
-    };
+    // const addNewCourse = () => {
+    //     setCourses([...courses,
+    //     {
+    //         ...course,
+    //         _id: new Date().getTime()
+    //     }]);
+    // };
 
-    const deleteCourse = (courseId) => {
-        setCourses(courses.filter((course) => course._id !== courseId));
-    };
+    // const deleteCourse = (courseId) => {
+    //     setCourses(courses.filter((course) => course._id !== courseId));
+    // };
 
-    const updateCourse = () => {
-        setCourses(
-            courses.map((c) => {
-                if (c._id === course._id) {
-                    return course;
-                } else {
-                    return c;
-                }
-            })
-        );
-    };
-
+    // const updateCourse = () => {
+    //     setCourses(
+    //         courses.map((c) => {
+    //             if (c._id === course._id) {
+    //                 return course;
+    //             } else {
+    //                 return c;
+    //             }
+    //         })
+    //     );
+    // };
 
 
     return (
@@ -65,7 +65,7 @@ function Dashboard() {
                     onChange={(e) => setCourse({ ...course, startDate: e.target.value })} />
                 <input value={course.endDate} className="form-control" type="date"
                     onChange={(e) => setCourse({ ...course, endDate: e.target.value })} />
-                <button className="btn btn-success me-2 mt-2" onClick={addNewCourse} >Add</button>
+                <button className="btn btn-success me-2 mt-2" onClick={addCourse} >Add</button>
                 <button className="btn btn-primary mt-2" onClick={updateCourse}>Update</button>
             </div>
 
