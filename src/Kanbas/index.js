@@ -6,7 +6,8 @@ import React from 'react';
 import store from "./store";
 import { Provider } from "react-redux";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { useEffect } from "react";
 
 
 function Kanbas() {
