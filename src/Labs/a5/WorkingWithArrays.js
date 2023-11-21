@@ -10,7 +10,7 @@ function WorkingWithArrays() {
         due: "2021-09-09",
         completed: false,
     });
-    const API = "http://localhost:4000/a5/todos";
+    const API = "https://kanbas-node-server-app-xinyue.onrender.com/api/a5/todos" || "http://localhost:4000/a5/todos";
     const [todos, setTodos] = useState([]);
     const fetchTodos = async () => {
         const response = await axios.get(API);
@@ -110,8 +110,7 @@ function WorkingWithArrays() {
             <h3>Deleting from an Array</h3>
             <a
                 href={`${API}/${todo.id}/delete`}
-                className="btn btn-primary me-2 mb-2"
-            >
+                className="btn btn-primary me-2 mb-2" >
                 Delete Todo with ID = {todo.id}
             </a>
             <h3>Updating an Item in an Array</h3>
@@ -215,8 +214,7 @@ function WorkingWithArrays() {
                         <button
                             onClick={() => fetchTodoById(todo.id)}
                             className="btn btn-warning me-2 ms-2 float-end"
-                        >
-                            Edit
+                        >Edit
                         </button>
                         <button
                             onClick={() => deleteTodo(todo)}
